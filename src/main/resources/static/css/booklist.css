@@ -1,0 +1,40 @@
+.container {
+	margin: auto;
+  	width: 80%;
+  	padding: 20px;	
+}
+.thead {
+	background-color: #f2f2f2;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+th {
+  padding-top: 12px;
+  padding: 8px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+td a {
+	color: green;
+	text-decoration: none;
+	font-weight: bold;
+}

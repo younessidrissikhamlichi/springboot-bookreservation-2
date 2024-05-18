@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/booklist.css">
+</head>
+<body>
+	<div th:insert="~{header :: menu}"></div>
+
+	<div class="container">
+		<table>
+			<thead>
+				<tr class="thead">
+					<th>Id</th>
+					<th>Name</th>
+					<th>Author</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="b :${books}">
+					<td th:text="${b.id}"></td>
+					<td th:text="${b.name}" contenteditable='true'></td>
+					<td th:text="${b.author}" contenteditable='true'></td>
+					<td th:text="${b.price}" contenteditable='true'></td>
+					<td><a th:href="@{/mylist/{id}(id=${b.id})}">Add To My List</a>
+
+						<a style="color: blue" th:href="@{/editBook/{id}(id=${b.id})}">
+							<i class="fa fa-pencil-square-o" style="font-size: 18px;"></i>
+					</a> <a style="color: red" th:href="@{/deleteBook/{id}(id=${b.id})}">
+							<i class="fa fa-trash-o" style="font-size: 18px"></i>
+					</a></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+	<div th:insert="~{footer :: bas_page}"></div>
+</body>
+</html>
